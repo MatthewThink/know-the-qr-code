@@ -1,0 +1,16 @@
+<view class="qrcode-box">
+  <view class=''>
+    <ad unit-id="adunit-ba29faf66d3313e0"></ad>
+  </view>
+
+  <view class="qrcode-container" style='margin-top:30rpx;'>
+    <view class="qrcode-top">
+      <text>二维码</text>
+    </view>
+    <canvas bindtap="previewImg"  canvas-id="mycanvas" class="qrcode" />
+    <view class="qrcode-bottom" bindtap='save_qrcode_img'>
+      <view>点击保存二维码</view>
+    </view>
+  </view>
+
+</view>

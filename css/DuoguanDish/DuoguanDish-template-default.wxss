@@ -1,0 +1,29 @@
+/* cyan */
+page{
+  /* 主色调 */
+  --mColor:#87caca;
+  /* 主色调rgb */
+  --mColorRgb:135,202,202;
+  /* 比主色调稍浅 */
+  --mColorLight:#9bd3d3;
+
+  /* 消费记录渐变 */
+  --payBalanceBg:linear-gradient(to bottom,#6430ba,#8760c7);
+  /* 会员卡背景渐变 */
+  --vipCardBg:linear-gradient(to right,#66c6c6,#47bcbb);
+  /* 会员卡投影 */
+  --vipCardShdo:84, 193, 192;
+}
+
+/************ color **************/
+.green,.ress-nav-active,.ress-side-active,.filter-item-active,.sp-item-i.active{ color: #9bd3d3;}
+.ress-nav-active::before{ border-bottom-color:#9bd3d3;}
+.sp-item-i.active::before{ border-color:#9bd3d3;}
+.count-btn,.cart-circle,.comm-name-score,.other-msg text,.my-code,button[type="primary"]{ background:#9bd3d3;}
+.button-hover[type="primary"],button[type="primary"][disabled],button[type="primary"][loading]{background: #afdcdc;}
+
+.red{color: #FF6B6C;}
+.counts,.count-spec-c{ background:#FF6B6C;}
+
+.ruzhu,.go_home{background: rgba(155,211,211, 0.3);}
+page .wx-radio-input-checked{color: #9bd3d3;background: currentColor !important;border-color:currentColor !important;}

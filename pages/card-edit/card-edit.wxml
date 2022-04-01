@@ -1,0 +1,66 @@
+<!--pages/card/card-edit/card-edit.wxml-->
+<form bindsubmit="formSubmit">
+  <view class="card-edit">
+    <view class="card-box">
+      <view class="avatar">
+        <image src="{{userInfo.avatarUrl}}" class="avatar-img" mode="aspectFill"></image>
+      </view>
+      <view class="edit-item gridXt">
+        <input type="text" class="edit-input" name="user_true_name" value="{{user_card.user_name||''}}" placeholder="请输入姓名" />
+      </view>
+      <view class="edit-item gridXt">
+        <input type="number" class="edit-input" name="user_true_phone" bindinput="check_phone_bind" value="{{user_card.user_phone||''}}" placeholder="请输入手机号" />
+      </view>
+    </view>
+    <view class="card-box">
+      <view class="edit-item gridXt  must-fill">
+        <input type="text" class="edit-input" name="user_gongsi" value="{{user_card.user_gongsi||''}}" placeholder="请输入公司名称" />
+      </view>
+      <view class="edit-item gridXt must-fill">
+        <input type="text" class="edit-input" name="user_zhiwu" value="{{user_card.user_zhiwu||''}}" placeholder="请输入职务" />
+      </view>
+      <view class="edit-item gridXt must-fill">
+        <input type="text" class="edit-input" name="user_email" value="{{user_card.user_email}}" placeholder="请输入邮箱" />
+      </view>
+
+      <view class="edit-item gridXt must-fill flex">
+        <textarea type="text" class="edit-area" name="address" disabled='true' value="{{ user_card.user_address || ''}}" placeholder="请先选择您的地址" bindtap='chooseLocation' />
+
+        <!-- <button class='mapIcon' open-type="openSetting" bindopensetting='chooseLocation'>
+          <text class='iconfont icon-locationfill'></text>
+        </button>
+
+        <input type="text" class="hidden" name="longitude" value="{{location.longitude || card_info.longitude || '0'}}" />
+        <input type="text" class="hidden" name="latitude" value="{{location.latitude || card_info.latitude || '0'}}" /> -->
+      </view>
+
+    </view>
+    <view class="card-box" style='border:1px solid #eee'>
+      <textarea class="textarea" name="user_jianjie" value="{{user_card.user_jianjie}}" placeholder="来一段简单介绍，让微信好友更多的了解你" />
+    </view>
+
+
+    <!-- <view class="new-post">
+      <view class="upload-img">
+        <block wx:for="{{card_info.imglist}}" wx:key="{{index}}">
+          <view class="item">
+            <image src="{{item}}" mode="aspectFill"></image>
+            <text class="iconfont icon-close item-del" bindtap="del_list_pic_bind" id="{{index}}"></text>
+            <input type='text' class='hidden' name="imgid[{{index}}]" value="{{card_info.imgid[index]}}"></input>
+          </view>
+        </block>
+
+        <block wx:for="{{postimg}}" wx:key="{{index}}">
+          <view class="item">
+            <image src="{{item}}" mode="aspectFill"></image>
+            <text class="iconfont icon-close item-del" bindtap="del_pic_bind" id="{{index}}"></text>
+          </view>
+        </block>
+        <view class="item add" bindtap="chooseimg_bind"></view>
+      </view>
+    </view> -->
+    <view class="smbit-btn">
+      <button type="primary" formType="submit" hover-class="none" disabled="{{btn_disabled}}" loading="{{submitIsLoading}}">提交保存</button>
+    </view>
+  </view>
+</form>

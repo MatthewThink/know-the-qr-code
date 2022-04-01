@@ -1,0 +1,13 @@
+/************ color **************/
+
+.green,.top-title .active{color: #9bd3d3;}
+
+button[type="primary"]{background: #9bd3d3;}
+button[type="primary"]:active,button[type="primary"][disabled]{background: #afdcdc;}
+
+
+/************** card_home ************/
+.red{color: #EE4266;}
+.blue{color:#DC965A;}
+.top{background-image: linear-gradient(to top, #209cff 0%, #68e0cf 100%);}
+

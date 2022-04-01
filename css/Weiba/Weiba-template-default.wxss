@@ -1,0 +1,8 @@
+/************ color **************/
+button[type="primary"]{background: #9bd3d3;}
+.header view.active{ border-bottom-color: #9bd3d3; }
+.green,.aside-icon,.icon-appreciatefill::before,.header view.active {color:#9bd3d3;}
+button[type="primary"],button[type="primary"][disabled],button[type="primary"][loading]{background: #afdcdc;}
+
+
+.marrow{ background: #FF595E;}

@@ -1,0 +1,30 @@
+<!--pages/home/home.wxml-->
+<view class="container-box">
+    <!--生成器-->
+    <view class="home-section">
+        <view class="home-section-title" bindtap="makeQrcode">
+            <text class="home-section-title-make">生成器</text>
+            <image class="home-next-btn" src="../../images/next.png"></image>
+        </view>
+        <view hidden="{{isShowMsg}}">
+            <textarea maxlength="-1" bindinput="bindInput" class="recognize-content" placeholder="请输入二维码的文本内容或网址"/>
+            <view class="home-clear"><text  hidden="{{showClear}}" bindtap="makeQrcode">生成二维码</text></view>
+        </view>
+        
+    </view>
+    <!--识别器-->
+    <view class="home-section">
+        <view  class="home-section-title" bindtap="recognizeCode">
+            <text class="home-section-title-recognize">识别器</text>
+            <image class="home-next-btn" src="../../images/next.png"></image>
+        </view>
+        <view hidden="{{isShowResult}}" class="recog-text">
+            <textarea maxlength="-1" value="{{recognizeMsg}}" class="recognize-content"/>
+             <view class="home-clear"><text  hidden="{{!recognizeMsg}}" bindtap="copy_this_title" data-content='{{recognizeMsg}}' style='font-size:36rpx;'>复制</text></view>
+        </view>
+    </view>
+
+    <view class='home-section'>
+      <ad unit-id="adunit-d5bf59faf6089216" ad-type="video" ad-theme="white"></ad>
+    </view>
+</view>

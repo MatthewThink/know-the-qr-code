@@ -1,0 +1,94 @@
+<block wx:if="{{glo_is_load}}">
+  <view class="glo_load_view">
+    <text class="weui-loading mr5"></text>
+    <text>正在努力加载</text>
+  </view>
+</block>
+<block wx:else>
+  <!--我的名片展示 start-->
+  <view class="card-show">
+
+    <view class="card-m">
+      <view class="card-t flex">
+        <view class="avarat">
+          <image src="{{user_card_info.avatarUrl}}" mode="aspectFill" class="avarat-img"></image>
+        </view>
+        <view class="card-t-info sub">
+          <view>
+            <view class="card-name">{{user_card_info.user_true_name}}</view>
+            <view class="card-job">{{user_card_info.user_zhiwu}}</view>
+          </view>
+        </view>
+        <button  class="to-mycard hidden" bindtap="go_home_bind">
+          <text class="iconfont icon-peoplefill"></text>
+        </button>
+      </view>
+
+      <view class="card-info gridXt" bindtap="call_phone_bind" id="{{user_card_info.user_true_phone}}">
+        <view class="f18">{{user_card_info.user_gongsi}}</view>
+        <view class="flex">
+          <view class="card-info-tit">电话</view>
+          <view class="sub">{{user_card_info.user_true_phone}}</view>
+        </view>
+        <view class="flex">
+          <view class="card-info-tit">邮箱</view>
+          <view class="sub">{{user_card_info.user_email}}</view>
+        </view>
+          <view class="flex" wx:if="{{user_card_info.address.length > 0}}" catchtap='openLocation' data-latitude="{{user_card_info.latitude}}" data-longitude="{{user_card_info.longitude}}" data-address="{{user_card_info.address}}">
+            <view class="card-info-tit">地址</view>
+            <view class="sub">{{user_card_info.address}}</view>
+          </view>
+      </view>
+      <view class="card-bg">
+        <image src="{{user_card_info.user_header_img}}" mode="aspectFill" class="card-bg-img"></image>
+      </view>
+    </view>
+
+     <!-- <view class="card-date flex">
+      <view class="card-date-item sub" bindtap="list">
+        <view class="count">{{user_card_info.view_click}}</view>
+        <view>
+          <text class="mr5 red iconfont icon-hotfill"></text>
+          <text>人气</text>
+        </view>
+      </view>
+      <view class="card-date-item sub" bindtap="card_view_bind" id="like">
+        <view class="count">{{user_card_info.view_like}}</view>
+        <view>
+          <text class="mr5 {{user_card_info.is_like == 1?'blue':'grey'}} iconfont icon-appreciatefill"></text>
+          <text>{{user_card_info.is_like == 1?'已赞':'点赞'}}</text>
+        </view>
+      </view>
+      <view class="card-date-item sub" bindtap="card_view_bind" id="shoucang">
+        <view class="count">{{user_card_info.view_shoucang}}</view>
+        <view>
+          <text class="mr5 {{user_card_info.is_shoucang == 1?'orange':'grey'}} iconfont icon-favorfill"></text>
+          <text>{{user_card_info.is_shoucang == 1?'已收藏':'收藏'}}</text>
+        </view>
+      </view>
+    </view> 
+
+    <view class="card-more gridXt flex">
+      <view class="card-info-tit linght">更多</view>
+      <view class="sub">{{user_card_info.user_jianjie}}</view>
+    </view> -->
+  </view>
+
+  <view class='picList'>
+    <!-- <block wx:for="{{imglist}}" wx:key='img'>
+      <image src="{{item}}" class="slide-image" mode='aspectFill' catchtap='previewImg' data-index='{{index}}' />
+    </block> -->
+     <ad unit-id="adunit-fbd916f8c17a7291"></ad>
+  </view>
+  <!--我的名片展示 end-->
+
+  <view class="btn-box">
+    <button class='mb15' type="primary" catchtap="import_myphone_bind">导入手机</button>
+    <!-- <button bindtap="card_view_bind" id="shoucang">立即收藏</button> -->
+  </view>
+  <view class='flex footerBox '>
+     <button class='sub footBtn' bindtap="goHomePage">前去首页</button>
+     <button class='sub footBtn ' bindtap="go_home_bind">我的名片</button> 
+  </view>
+
+</block>

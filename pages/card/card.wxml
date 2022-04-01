@@ -1,0 +1,128 @@
+<!--pages/card/card.wxml-->
+<block wx:if="{{glo_is_load}}">
+  <view class="glo_load_view grey">
+    <text class="weui-loading mr5"></text>
+    <text>加载中...</text>
+  </view>
+</block>
+<block wx:else>
+
+  <!--未创建名片提示start-->
+  <block wx:if="{{!card_info}}">
+    <view class="no-card linght">
+      <text class="iconfont icon-iconmingpian01"></text>
+      <view>你还没有名片哦</view>
+      <view>赶快来创建一张自己的专属名片吧！</view>
+    </view>
+    <view class="new-card">
+      <button type="primary" hover-class="none" bindtap="edit_card_bind" bindgetuserinfo="onGotUserInfo" open-type='getUserInfo'>创建我的专属名片</button>
+    </view>
+
+    <view class="ad-box mt20">
+      <ad unit-id="adunit-fbd916f8c17a7291"></ad>
+    </view>
+  </block>
+
+  <!--未创建名片提示 end-->
+  <block wx:else>
+
+    <!--我的名片展示 start-->
+    <view class="card-show">
+      <view class="card-m">
+        <view class="card-t flex">
+          <view class="avarat">
+            <image src="{{userInfo.avatarUrl}}" mode="aspectFill" class="avarat-img"></image>
+
+          </view>
+          <view class="card-t-info sub">
+            <view>
+              <view class="card-name">{{card_info.user_name}}</view>
+              <view class="card-job">{{card_info.user_zhiwu}}</view>
+            </view>
+          </view>
+          <button class="bianji-btn" bindtap="cardEdit">
+            <text class="iconfont icon-bianji " style='font-size:46rpx;'></text>
+          </button>
+        </view>
+        <view class="card-info gridXt">
+          <view class="f18">{{card_info.user_gongsi}}</view>
+          <view class="flex" catchtap='makePhoneCall' data-phone="{{card_info.user_true_phone}}">
+            <view class="card-info-tit">电话</view>
+            <view class="sub">{{card_info.user_phone}}</view>
+          </view>
+          <view class="flex">
+            <view class="card-info-tit">邮箱</view>
+            <view class="sub">{{card_info.user_email}}</view>
+          </view>
+          <view class="flex" wx:if="{{card_info.address != ''}}" catchtap='openLocation' data-latitude="{{card_info.latitude}}" data-longitude="{{card_info.longitude}}" data-address="{{card_info.address}}">
+            <view class="card-info-tit">地址</view>
+            <view class="sub">{{card_info.user_address}}</view>
+          </view>
+        </view>
+        <view class="card-bg">
+          <image src="{{card_info.user_header_img}}" mode="aspectFill" class="card-bg-img"></image>
+        </view>
+      </view>
+      <!-- <view class="card-date flex">
+                <view class="card-date-item sub" bindtap="view_list_bind" id="click">
+                    <view class="count">{{card_info.view_click}}</view>
+                    <view>
+                        <text class="mr5 red iconfont icon-hotfill"></text>
+                        <text>人气</text>
+                    </view>
+                </view>
+                <view class="card-date-item sub" bindtap="view_list_bind" id="like">
+                    <view class="count">{{card_info.view_like}}</view>
+                    <view>
+                        <text class="mr5 blue iconfont icon-appreciatefill"></text>
+                        <text>点赞</text>
+                    </view>
+                </view>
+                <view class="card-date-item sub" bindtap="view_list_bind" id="shoucang">
+                    <view class="count">{{card_info.view_shoucang}}</view>
+                    <view>
+                        <text class="mr5 orange iconfont icon-favorfill"></text>
+                        <text>收藏</text>
+                    </view>
+                </view>
+            </view> -->
+      <!-- <view class="card-more gridXt flex">
+                <view class="card-info-tit linght">更多</view>
+                <view class="sub">{{card_info.user_jianjie}}</view>
+            </view>
+            <view class="mt10 card-ico-box">
+                <view class="card-ico-btn" catchtap="onNavigateTap" data-url='/pages/card/ranking/ranking'>
+                    <text class="iconfont icon-rankfill"></text>
+                    <text>排行榜</text>
+                </view>
+                <view class="card-ico-btn" data-url="/pages/card/card-folder/card-folder" catchtap="onNavigateTap">
+                    <text class="iconfont icon-mingpianxitong"></text>
+                    <text>名片夹</text>
+                </view>
+            </view> -->
+    </view>
+
+    <view class='picList'>
+      <block wx:for="{{card_info.imglist}}" wx:key='{{index}}'>
+        <image src="{{item}}" class="slide-image" mode='aspectFill' catchtap='previewImg' data-index='{{index}}' />
+      </block>
+    </view>
+
+    <!--我的名片展示 end-->
+    <view class="btn-box">
+      <button type="primary" catchtap="onShareAppMessage" open-type='share'>递名片</button>
+      <view class="sub">
+        <view class="tc grey" catchtap="onCreateImgTap">点击分享名片给好友</view>
+      </view>
+    </view>
+
+    <view class="ad-box mt10">
+      <ad unit-id="adunit-fbd916f8c17a7291"></ad>
+    </view>
+    <!--递名片弹出层 start-->
+    <!-- <view class="share-tips floatBox floatBoxBg" wx:if="{{is_show_share}}" bindtap="hide_share_bind">
+            <image src="/images/share.png" mode="widthFix" style="width:100%;"></image>
+        </view> -->
+    <!--递名片弹出层 end-->
+  </block>
+</block>

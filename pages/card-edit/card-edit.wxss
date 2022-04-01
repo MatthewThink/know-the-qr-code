@@ -1,0 +1,78 @@
+/* pages/card/card-edit/card-edit.wxss */
+ /* @import "/css/DuoguanBcard/DuoguanBcard-template-default.wxss";  */
+
+
+/* pages/card/card-edit/card-edit.wxss */
+.card-box{ background: #fff; margin:30rpx; border-radius: 12rpx; overflow: hidden; margin-bottom: 20rpx;}
+.avatar{ width: 160rpx; height: 160rpx; margin:30rpx auto;}
+.avatar-img{ width: 100%; height: 100%; border-radius: 50%;}
+.edit-item{ position: relative; padding:20rpx; font-size: 32rpx;}
+
+.edit-input{ height: 52rpx; width: 100%; padding: 0 10rpx; font-size: inherit;}
+.getCode{ position: absolute; height:72rpx; line-height:72rpx; top:10rpx; right:20rpx; font-size:28rpx;z-index: 9;}
+.textarea{ padding: 30rpx; font-size: 32rpx; width: 100%; height: 100px;}
+.smbit-btn{ margin: 30rpx;}
+
+
+.upload-img{ padding:8px 16px 16px; overflow: hidden;}
+.upload-img .item{ width: 60px; height: 60px; margin-top: 8px; float:left; margin-right: 8px;position: relative;}
+.upload-img .item-del{position: absolute;top:-10px;left:45px;color:#fff;background:rgba(0, 0, 0, 0.8);border-radius: 50%;width:20px;height: 20px;text-align: center;z-index: 2;}
+.upload-img .item image{ width: 100%; height: 100%;}
+.upload-img .item.add{ border: 1px solid #ccc; position: relative;}
+.upload-img .item.add::after,.new-post .upload-img .item.add::before{ content: ""; width: 50%; height: 4px; border-radius: 2px; display: block; position: absolute; background: #ccc; left: 50%; top: 50%; -webkit-transform: translate(-50%,-50%);transform: translate(-50%,-50%);}
+.upload-img .item.add::after{ -webkit-transform:translate(-50%，-50%) rotate(90deg);transform:translate(-50%,-50%) rotate(90deg);}
+
+
+
+
+.card-edit{margin: 0 30rpx}
+.card-box{ background: #fff; margin:30rpx 0; border-radius: 12rpx; overflow: hidden; margin-bottom: 20rpx;}
+.avatar{ width: 160rpx; height: 160rpx; margin:30rpx auto;}
+.avatar-img{ width: 100%; height: 100%; border-radius: 50%;}
+.edit-item{ position: relative; padding:20rpx; font-size: 32rpx;}
+
+.edit-input{ height: 52rpx; width: 100%; padding: 0 10rpx; font-size: inherit;}
+.getCode{ position: absolute; height:72rpx; line-height:72rpx; top:10rpx; right:20rpx; font-size:28rpx;z-index: 9;}
+.textarea{ padding: 30rpx; font-size: 32rpx; width: 100%; height: 100px;}
+.smbit-btn{ margin: 30rpx;}
+
+/* 添加图片 */
+.form-add-img{display: inline-block;width: 156rpx;height: 156rpx;margin-right: 20rpx;position: relative;vertical-align: bottom;}
+.form-add-img image{width: 100%;height: 100%;border-radius: 6rpx;}
+.form-add-img:nth-child(4n+4),
+.form-add-img:last-child{margin-right: 0;}
+.form-add-img:nth-child(n+5){margin-top: 20rpx;}
+.add-img-fail{display:block;width:100%;background: rgba(255, 0, 0, 0.5);position: absolute;bottom: 0;left: 0;text-align: center;color: #fff;font-size: 24rpx;}
+.close-img{width: 40rpx;height: 40rpx;color: #fff;position: absolute;top: 0;right: 0;background: rgba(0, 0, 0, 0.1);}
+.close-img::before,.close-img::after,.add-btn::before,.add-btn::after{content: '';width: 50%;height: 1px;background: currentColor;position: absolute;top: 50%;left: 50%;transform: translate(-50%,-50%) rotate(45deg);}
+.close-img::after{transform: translate(-50%,-50%) rotate(-45deg);}
+.add-btn{display: block;width: 100%;height: 100%;background: transparent;border: 1px solid #ddd;color: #aaa;}
+.add-btn::before{transform: translate(-50%,-50%) rotate(0);}
+.add-btn::after{transform: translate(-50%,-50%) rotate(90deg);}
+.image-info{display: block;width: 100%;text-align: center;font-size: 24rpx;background: rgba(0, 0, 0, 0.5);color: #fff;position: absolute;bottom: 0;left: 0;}
+.edit-item.flex{
+    align-items: center;
+}
+.edit-area{
+    padding-top: 10rpx;
+    height: 100rpx;
+}
+.mapIcon{
+    width: 120rpx;
+    height: 80rpx;
+   line-height: 80rpx;
+   text-align: center;
+}
+.mapIcon{
+    width: 120rpx;
+    height: 80rpx;
+    line-height: 80rpx;
+    background-color: #fff;
+}
+.mapIcon::after{
+  display: none;
+}
+.mapIcon:active{
+    background-color: #eee;
+}
+

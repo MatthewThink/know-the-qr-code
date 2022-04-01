@@ -1,0 +1,40 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/main/main",
+    "pages/card/card",
+    "pages/user/user",
+    "pages/card-edit/card-edit",
+    "pages/card-info/card-info"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#37373b",
+    "navigationBarTitleText": "知了二维码",
+    "navigationBarTextStyle": "white",
+    "backgroundColor": "#efeff4",
+    "backgroundTextStyle": "light"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "首页",
+        "iconPath": "/images/code.png",
+        "selectedIconPath": "/images/code1.png"
+      },
+      {
+        "pagePath": "pages/card/card",
+        "text": "微信名片",
+        "iconPath": "/images/card.png",
+        "selectedIconPath": "/images/card1.png"
+      },
+      {
+        "pagePath": "pages/user/user",
+        "text": "我的",
+        "iconPath": "/images/user.png",
+        "selectedIconPath": "/images/user1.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

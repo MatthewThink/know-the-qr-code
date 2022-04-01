@@ -1,0 +1,7 @@
+/************ color **************/
+
+.green,.tab-sub-active {color: #9bd3d3;}
+.bgcolor,.msg-title::before,.tab-sub-active::after,.comm-name-score,button[type="primary"]{background: #9bd3d3;}
+button[type="primary"][disabled],button[type="primary"][loading],button[type="primary"]:active{background: #afdcdc;}
+
+.tags-alls {background: rgba(155, 211, 211, 0.05);}
